@@ -1,0 +1,21 @@
+test_login:
+  # 测试用例编号：第一条测试用例
+  test_login_001:
+    accounts: "moujiang"
+    pwd: ""
+    expect: "密码格式 6~18 个字符之间"
+    # 第二条测试用例
+  test_login_002:
+    accounts: ""
+    pwd: "moujiang"
+    expect: "登录账号有误"
+    # 第三条测试用例
+  test_login_003:
+    accounts: "lwx"
+    pwd: "moujiang"
+    expect: "帐号不存在"
+    # 第四条测试用例
+  test_login_004:
+    accounts: "moujiang"
+    pwd: "123456"
+    expect: "密码错误"

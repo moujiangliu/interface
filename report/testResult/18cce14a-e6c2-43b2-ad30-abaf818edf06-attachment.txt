@@ -1,0 +1,2 @@
+[32mINFO    [0m interface:payOrderApi.py:13 self.url的值是http://121.42.15.146:9090/mtx/index.php?s=/index/order/pay/id/6831.html
+[32mINFO    [0m interface:orderApi.py:24 config.JUMP_URL的值是http://121.42.15.146:9090/mtx/index.php?s=/index/order/pay/id/6832.html
