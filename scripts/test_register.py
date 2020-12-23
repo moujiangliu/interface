@@ -5,6 +5,7 @@ from faker import Faker
 from api.registerApi import RegisterApi
 from tools.logger import logger
 from tools.pymysqlutil import DataBaseHandle
+import allure
 log = logger().get_logger()
 
 
@@ -15,6 +16,11 @@ class TestRegister():
         self.db = DataBaseHandle()
         self.reg_obj = RegisterApi()
 
+    @allure.feature('注册接口测试')
+    @allure.story('注册接口')
+    @allure.title('注册接口用例')
+    @allure.description('注册接口测试')
+    @allure.severity('critical')
     def test_register(self):
         # 实例化faker这个类
         fake = Faker()
