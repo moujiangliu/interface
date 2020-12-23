@@ -20,6 +20,7 @@ class TestCart():
     @allure.story('添加商品至购物车')
     @allure.severity('critical')
     @allure.description('添加商品至购物车')
+    @allure.title('添加商品至购物车')
     def test_addcart_success(self):
         resp_cart = self.addcart_obj.add_cart(self.session)
         assert resp_cart.json().get("msg") == "加入成功"
