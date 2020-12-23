@@ -7,6 +7,7 @@ from tools.logger import logger
 from tools.pymysqlutil import DataBaseHandle
 log = logger().get_logger()
 
+
 class TestRegister():
     def setup_class(self):
         self.session = requests.Session()
