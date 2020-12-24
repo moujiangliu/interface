@@ -56,7 +56,7 @@ class TestRegister():
     @allure.story('注册接口的参数化测试')
     @allure.severity('critical')
     @allure.description('注册接口的参数化测试')
-    @pytest.mark.parametrize("value", analyze_data('analyze_data',"test_register"))
+    @pytest.mark.parametrize("value", analyze_data('register_data', "test_register"))
     @allure.title('注册的异常场景的参数化测试,测试数据是:{value}')
     def test_register_data(self, value):
         data = {
