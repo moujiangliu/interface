@@ -1,0 +1,36 @@
+test_register:
+  # 第一条测试用例
+  test_reg_001:
+    accounts: "moujiang"
+    pwd: "moujiang"
+    expect: "账号已存在"
+
+  # 第二条测试用例
+  test_reg_002:
+    accounts: ""
+    pwd: "moujiang"
+    expect: "账号不能为空"
+
+  # 第三条测试用例
+  test_reg_003:
+    accounts: "moujiang"
+    pwd: ""
+    expect: "密码不能为空"
+
+  # 第四条测试用例
+  test_reg_004:
+    accounts: "moujiangmoujiangmoujiang"
+    pwd: "moujiang"
+    expect: "用户名格式由 字母数字下划线 2~18 个字符"
+
+  # 第五条测试用例
+  test_reg_005:
+    accounts: "m"
+    pwd: "moujiang"
+    expect: "用户名格式由 字母数字下划线 2~18 个字符"
+
+  # 第六条测试用例
+  test_reg_006:
+    accounts: "mm"
+    pwd: "moujiang"
+    expect: "注册成功"
