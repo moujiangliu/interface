@@ -33,4 +33,4 @@ test_register:
   test_reg_006:
     accounts: "mm"
     pwd: "moujiang"
-    expect: "注册成功"
+    expect: "账号已存在"
