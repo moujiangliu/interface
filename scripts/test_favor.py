@@ -2,6 +2,8 @@
 
 import requests
 import allure
+
+from api.cancelApi import Cancel
 from api.favorApi import Favor
 from api.loginApi import MtxLogin
 
@@ -13,6 +15,10 @@ class TestFavor():
         self.favor_api = Favor()
         # 调用成功的登录的接口
         MtxLogin().login_success(self.session)
+
+    def teardown_class(self):
+        # 调用取消收藏的接口
+        Cancel().cancel(self.session)
 
     @allure.feature('收藏接口')
     @allure.severity('normal')
