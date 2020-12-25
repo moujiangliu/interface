@@ -14,11 +14,10 @@ class TestOrder():
         # 调用成功的登录接口
         MtxLogin().login_success(self.session)
 
-    @allure.feature('正向提交订单的接口测试用例')
-    @allure.story('提交订单测试')
-    @allure.title('提交订单测试')
-    @allure.description('正向提交订单的接口测试用例')
+    @allure.feature('提交订单接口')
+    @allure.description('提交订单的接口测试用例')
     @allure.severity('critical')
+    @allure.title('提交订单')
     def test_order_success_case003(self):
         '''
         1. 依赖于登录: 登录测试用例级别(test_mtx_login)
@@ -31,6 +30,10 @@ class TestOrder():
         resp_order = self.order_obj.order(self.session)
         assert resp_order.json().get('msg') == "提交成功"
 
+    @allure.feature('提交订单接口2')
+    @allure.description('提交订单的接口测试用例2')
+    @allure.severity('normal')
+    @allure.title('提交订单')
     def test_order_error(self):
         '''调用成功登陆的用例,需要放到setup_class里面,方便多个用例调用'''
         # 调用成功的登录接口

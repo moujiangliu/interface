@@ -21,12 +21,13 @@ class TestRegister():
         self.db = DataBaseHandle()
         self.reg_obj = RegisterApi()
 
-    @allure.feature('注册接口测试')
-    @allure.story('注册接口')
-    @allure.title('注册接口用例')
-    @allure.description('注册接口测试')
+    @allure.feature('注册接口')
     @allure.severity('critical')
+    @allure.title('注册接口')
     def test_register(self):
+        '''
+        注册接口测试用例
+        '''
         # 实例化faker这个类
         fake = Faker()
 
@@ -53,12 +54,13 @@ class TestRegister():
         assert data[0][1] == username
 
     @allure.feature('注册接口的参数化测试集合')
-    @allure.story('注册接口的参数化测试')
     @allure.severity('critical')
-    @allure.description('注册接口的参数化测试')
     @pytest.mark.parametrize("value", analyze_data('register_data', "test_register"))
-    @allure.title('注册的异常场景的参数化测试,测试数据是:{value}')
+    @allure.title('注册异常场景的参数化测试,测试数据是:{value}')
     def test_register_data(self, value):
+        '''
+        注册接口参数化测试用例
+        '''
         data = {
             "accounts": value["accounts"],
             "pwd": value["pwd"],
