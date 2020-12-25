@@ -21,5 +21,8 @@ class TestCancel():
     @allure.severity('normal')
     @allure.title('取消收藏')
     def test_cancel(self):
+        '''
+        取消收藏接口测试用例
+        '''
         resp = self.cancel_api.cancel(self.session)
         assert resp.json().get("msg") == "取消成功"
